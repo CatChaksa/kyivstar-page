@@ -1,0 +1,398 @@
+<link rel="stylesheet" href="styles/styles.css">
+<script src="js/script.js"></script>
+<script src="js/canvas-animation.js"></script>
+<script src="js/storage.js"></script>
+
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Київстар - твій світ без кордонів!</title>
+    <link rel="stylesheet" href="styles/style.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <div class="logo-text">Київстар</div>
+                </div>
+                <div class="contact-info">
+                    <div>📞 0 800 300 466</div>
+                    <div>💻 kyivstar.ua</div>
+                    <div>🕒 Цілодобова підтримка</div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="canvas-background">
+            <canvas id="floatingCircles"></canvas>
+        </div>
+        <div class="container">
+            <h1>Київстар - твій світ без кордонів! 🚀</h1>
+            <p>Понад 25 мільйонів українців обирають нас щодня. Приєднуйся до найсучаснішої мережі України!</p>
+            <button class="cta-button" id="connectButton" type="button">
+                Підключити за 2 хвилини! ⚡
+            </button>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features">
+        <div class="container">
+            <h2 class="section-title">Чому обирають Київстар?</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">📡</div>
+                    <h3>Найширше покриття в Україні</h3>
+                    <p>Понад 98% населення України в зоні покриття. Подорожуй, працюй, спілкуйся - завжди на зв'язку!</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">💫</div>
+                    <h3>Швидкісний інтернет 4G/5G</h3>
+                    <p>Завантажуй фільми за секунди, грай в онлайн-ігри без лагів, працюй з хмарою - наша мережа витримає все!</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🌍</div>
+                    <h3>Мандруй по Європі без роумінгу</h3>
+                    <p>Подорожуй 45 країнами Європи з тарифом "ЄС" - плати як вдома! Без прихованих платежів та сюрпризів.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Video Section -->
+    <section class="video-section">
+        <div class="container">
+            <h2 class="section-title">Київстар - технології майбутнього вже сьогодні! 🚀</h2>
+            <p class="video-description">Відкрийте для себе інноваційні рішення, які роблять наше спілкування ще якіснішим та швидшим</p>
+            
+            <div class="video-container">
+                <video controls width="100%" autoplay muted loop>
+                    <source src="videos/kyivstar-video.mp4" type="video/mp4">
+                    Ваш браузер не підтримує відео елемент.
+                </video>
+            </div>
+
+             <div class="video-stats">
+                <div class="stat-item">
+                    <label>📡 Якість зв'язку у вашому регіоні:</label>
+                    <meter value="0.85" min="0" max="1" low="0.3" high="0.8" optimum="0.9">85%</meter>
+                    <span>Відмінно (85%)</span>
+                </div>
+                <div class="stat-item">
+                    <label>⚡ Швидкість інтернету 5G:</label>
+                    <progress value="75" max="100">75%</progress>
+                    <span>750 Мбіт/с (75% від максимуму)</span>
+                </div>
+                <div class="stat-item">
+                    <label>🗺️ Покриття мережі:</label>
+                    <meter value="0.92" min="0" max="1">92%</meter>
+                    <span>92% території України</span>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <h3>28+</h3>
+                    <p>років на ринку</p>
+                </div>
+                <div class="stat-item">
+                    <h3>25M+</h3>
+                    <p>абонентів</p>
+                </div>
+                <div class="stat-item">
+                    <h3>98%</h3>
+                    <p>покриття України</p>
+                </div>
+                <div class="stat-item">
+                    <h3>24/7</h3>
+                    <p>підтримка</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Forms Section -->
+    <section class="forms-section" id="forms">
+        <div class="container">
+            <h2 class="section-title">Обери свою послугу</h2>
+            <div class="forms-container">
+                
+                <!-- Form 1: Підключення тарифу -->
+                <div class="form-card">
+                    <div class="form-header">
+                        <h3>📲 Підключення нового тарифу</h3>
+                        <p>Обери тариф мрії всього за 2 хвилини!</p>
+                    </div>
+                    <div class="form-body">
+                        <form id="tariffForm">
+                            <div class="form-group">
+                                <label for="fullName">ПІБ *</label>
+                                <input type="text" id="fullName" name="fullName" required placeholder="Введіть ваше повне ім'я">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="phone">Номер телефону *</label>
+                                <input type="tel" id="phone" name="phone" required 
+                                    placeholder="+38 (095) XXX-XX-XX" 
+                                    pattern="\+38\s?\(?(0(39|50|63|66|67|68|73|91|92|93|94|95|96|97|98|99))\)?\s?\d{3}-?\d{2}-?\d{2}"
+                                    title="Будь ласка, введіть номер у форматі +38 (0XX) XXX-XX-XX">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="email">Електронна пошта *</label>
+                                <input type="email" id="email" name="email" required placeholder="example@domain.com">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="region">Область *</label>
+                                <select id="region" name="region" required>
+                                    <option value="">-- Оберіть область --</option>
+                                    <option value="kyiv">Київська</option>
+                                    <option value="lviv">Львівська</option>
+                                    <option value="kharkiv">Харківська</option>
+                                    <option value="odesa">Одеська</option>
+                                    <option value="dnipro">Дніпропетровська</option>
+                                </select>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="tariffType">Тип тарифу *</label>
+                                <select id="tariffType" name="tariffType" required>
+                                    <option value="">-- Оберіть тариф --</option>
+                                    <option value="smart">Смарт-лайн</option>
+                                    <option value="unlimited">Безліміт</option>
+                                    <option value="premium">Преміум</option>
+                                    <option value="business">Для бізнесу</option>
+                                </select>
+
+                                <div class="form-group">
+                                    <label>Переваги обраного тарифу:</label>
+                                    <div id="tariffBenefit" class="tariff-benefit">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="button-group">
+                                <button type="submit" class="btn btn-primary">Підключити! 🚀</button>
+                                <button type="reset" class="btn btn-secondary">Очистити</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+                <!-- Form 2: Технічна підтримка -->
+                <div class="form-card">
+                    <div class="form-header">
+                        <h3>🛠️ Технічна підтримка</h3>
+                        <p>Виникли проблеми? Ми завжди на допомозі!</p>
+                    </div>
+                    <div class="form-body">
+                        <form id="supportForm">
+                            <div class="form-group">
+                                <label for="supportPhone">Номер телефону *</label>
+                                <input type="tel" id="supportPhone" name="supportPhone" required 
+                                    placeholder="+38 (095) XXX-XX-XX"
+                                    pattern="\+38\s?\(?(0(39|50|63|66|67|68|73|91|92|93|94|95|96|97|98|99))\)?\s?\d{3}-?\d{2}-?\d{2}">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="problemType">Тип проблеми</label>
+                                <input list="problemTypes" id="problemType" name="problemType" placeholder="Оберіть тип проблеми">
+                                <datalist id="problemTypes">
+                                    <option value="Зв'язок">
+                                    <option value="Інтернет">
+                                    <option value="Послуги">
+                                    <option value="Рахунок">
+                                    <option value="Обладнання">
+                                </datalist>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="priority">Важливість проблеми</label>
+                                <input type="range" id="priority" name="priority" min="1" max="5" value="3">
+                                <output for="priority" id="priorityValue">Середня</output>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="problemDate">Дата та час проблеми</label>
+                                <input type="datetime-local" id="problemDate" name="problemDate">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="problemDescription">Опис проблеми</label>
+                                <textarea id="problemDescription" name="problemDescription" rows="4" placeholder="Детально опишіть проблему..."></textarea>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="screenshotUpload">Додати скріншот проблеми (до 3MB):</label>
+                                <input type="file" id="screenshotUpload" accept="image/*">
+                                <div id="screenshotPreview" class="screenshot-preview-container"></div>
+                                <small>JPG, PNG - максимум 3MB</small>
+                            </div>
+
+                            <div class="button-group">
+                                <button type="submit" class="btn btn-primary">Надіслати запит</button>
+                                <button type="reset" class="btn btn-secondary">Очистити</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+                <!-- Form 3: Оплата послуг -->
+                <div class="form-card">
+                    <div class="form-header">
+                        <h3>💳 Оплата послуг</h3>
+                        <p>Поповнюй рахунок без комісії!</p>
+                    </div>
+                    <div class="form-body">
+                        <form id="paymentForm">
+                            <!-- ДОДАНО ПОЛЕ ТЕЛЕФОНУ -->
+                            <div class="form-group">
+                                <label for="paymentPhone">Номер телефону *</label>
+                                <input type="tel" id="paymentPhone" name="paymentPhone" required 
+                                    placeholder="+38 (095) XXX-XX-XX"
+                                    pattern="\+38\s?\(?(0(39|50|63|66|67|68|73|91|92|93|94|95|96|97|98|99))\)?\s?\d{3}-?\d{2}-?\d{2}"
+                                    title="Будь ласка, введіть номер у форматі +38 (0XX) XXX-XX-XX">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="amount">Сума поповнення *</label>
+                                <input type="number" id="amount" name="amount" required min="10" max="1000" step="10" value="100" placeholder="Введіть суму">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="paymentMethod">Спосіб оплати *</label>
+                                <select id="paymentMethod" name="paymentMethod" required>
+                                    <option value="">-- Оберіть спосіб --</option>
+                                    <option value="card">Банківська карта</option>
+                                    <option value="googlepay">Google Pay</option>
+                                    <option value="applepay">Apple Pay</option>
+                                    <option value="privat24">Приват24</option>
+                                </select>
+                            </div>
+                            
+                            <!-- ПОЛЕ КАРТКИ (показується тільки при виборі "Банківська карта") -->
+                            <div class="form-group" id="cardField">
+                                <label for="cardNumber">Номер картки *</label>
+                                <input type="text" id="cardNumber" name="cardNumber" 
+                                    placeholder="1234 5678 9012 3456" 
+                                    pattern="\d{4}\s?\d{4}\s?\d{4}\s?\d{4}"
+                                    title="Будь ласка, введіть 16-значний номер картки"
+                                    maxlength="19">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label>
+                                    <input type="checkbox" name="autoPayment" checked>
+                                    Увімкнути автопоповнення
+                                </label>
+                            </div>
+                            
+                            <div class="button-group">
+                                <button type="submit" class="btn btn-primary">Оплатити</button>
+                                <button type="reset" class="btn btn-secondary">Скасувати</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+                <!-- Form 4: Запис в сервісний центр -->
+                <div class="form-card">
+                    <div class="form-header">
+                        <h3>🔧 Сервісний центр</h3>
+                        <p>Записуйся онлайн - отримай знижку 10%!</p>
+                    </div>
+                    <div class="form-body">
+                        <form id="serviceForm">
+                            <div class="form-group">
+                                <label for="serviceName">ПІБ *</label>
+                                <input type="text" id="serviceName" name="serviceName" required placeholder="Введіть ваше ім'я">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="servicePhone">Телефон *</label>
+                                <input type="tel" id="servicePhone" name="servicePhone" required placeholder="+38 (0XX) XXX-XX-XX">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="serviceRegion">Область *</label>
+                                <select id="serviceRegion" name="serviceRegion" required>
+                                    <option value="">-- Оберіть область --</option>
+                                    <option value="kyiv">Київ</option>
+                                    <option value="lviv">Львів</option>
+                                    <option value="kharkiv">Харків</option>
+                                    <option value="odesa">Одеса</option>
+                                    <option value="dnipro">Дніпро</option>
+                                </select>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="serviceCenter">Сервісний центр</label>
+                                <select id="serviceCenter" name="serviceCenter">
+                                    <option value="">-- Оберіть центр --</option>
+                                    <option value="center1">Центр обслуговування №1</option>
+                                    <option value="center2">Центр обслуговування №2</option>
+                                    <option value="center3">Центр обслуговування №3</option>
+                                </select>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="appointmentDate">Бажана дата</label>
+                                <input type="date" id="appointmentDate" name="appointmentDate" min="2024-01-01">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="appointmentTime">Зручний час</label>
+                                <input type="time" id="appointmentTime" name="appointmentTime">
+                            </div>
+                            
+                            <div class="button-group">
+                                <button type="submit" class="btn btn-primary">Записатися</button>
+                                <button type="reset" class="btn btn-secondary">Очистити</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <footer>
+         <div class="container">
+            <div class="background-music">
+                <div class="music-controls">
+                    <span>🎵 Фонова музика</span>
+                    <audio id="bgMusic" loop>
+                        <source src="audio/background-music.mp3" type="audio/mpeg">
+                        Ваш браузер не підтримує аудіо елемент.
+                    </audio>
+                    <div class="music-buttons">
+                        <button id="playMusic" class="music-btn">▶</button>
+                        <button id="pauseMusic" class="music-btn">⏸</button>
+                        <button id="stopMusic" class="music-btn">⏹</button>
+                        <span id="volumeText">🔊 30%</span>
+                    </div>
+                </div>
+            </div>
+        
+        <p>© 2024 ТОВ «Київстар». Всі права захищені.</p>
+        <p>Лабораторна робота 7 - Використання веб-форм на веб-сторінці формату HTML5</p>
+    </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
