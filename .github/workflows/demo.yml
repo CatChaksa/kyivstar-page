@@ -1,0 +1,41 @@
+name: CI Demo
+
+on: [push]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+    
+    - name: List project files
+      run: |
+        echo "========================================="
+        echo " Список файлів у репозиторії"
+        echo "========================================="
+        ls -la
+        echo ""
+        echo " Папка styles:"
+        ls -la styles/ || echo "Папка styles порожня"
+        echo ""
+        echo " Папка js:"
+        ls -la js/ || echo "Папка js порожня"
+    
+    - name: Check if index.html exists
+      run: |
+        if [ -f "index.html" ]; then
+          echo " index.html знайдено!"
+          echo " Розмір: $(wc -c < index.html) байт"
+        else
+          echo " ПОМИЛКА: index.html не знайдено!"
+          exit 1
+        fi
+    
+    - name: Display success message
+      run: |
+        echo "========================================="
+        echo " CI Pipeline успішно відпрацював!"
+        echo " Сторінка Київстар готова!"
+        echo "========================================="
